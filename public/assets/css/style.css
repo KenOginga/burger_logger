@@ -1,0 +1,20 @@
+body {
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.jumbotron{
+    background-color: #f1efe0;
+    background-image: url("../images/burger.png");
+    background-size: cover;
+    height: 1000px;
+}
+
+.row {
+    background-color: rgba(241,239,224,0.75); 
+}
+.btn {
+    display: inline-block;
+    white-space: nowrap;
+}

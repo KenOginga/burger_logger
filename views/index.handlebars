@@ -1,0 +1,52 @@
+<div class="container">
+        <div class = "row p-5">
+            <div class = "col-md-6">
+                <h1>Burgers to Eat: </h1>
+                <ol class="list-group mb-3">
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                           <li class="m-2">
+                               <div class="row">
+                                   <div class="col-9">
+                                       <h5>{{burger_name}}</h5>
+                                   </div>
+                                   <div class="col-3">
+                                       <button type="button" class="btn btn-dark mx-3 change-eaten" data-id="{{id}}" data-neweaten= "1">Devour it</button>
+                                   </div>
+                               </div>  
+                            </li>
+                        {{/unless}}
+                    {{/each}}
+                </ol>
+            </div>
+            <div class = "col-md-6">
+                <h1>Devoured Burgers: </h1>
+                <ol class="list-group mb-3">
+                    {{#each burgers}}
+                        {{#if devoured}}
+                            <li class="m-2">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <h5>{{burger_name}}</h5>
+                                    </div>
+                                    <div class="col-2">
+                                        <button type="button" class="btn btn-dark mx-3 deleteBtn" data-id="{{id}}">Delete</button>
+                                        {{!-- <button class = "mx-3 delete-burger" data-id="{{id}}">Delete</button> --}}
+                                    </div>
+                                </div>
+                            </li>
+                        {{/if}}
+                    {{/each}}
+                </ol>
+            </div>
+        </div>
+        <div class="row justify-content-center p-4 m-4"> 
+            <form class="text-center">
+                <div class="form-group">
+                    <label for="newBurger">ADD YOUR BURGER</label>
+                    <input type="text" class="form-control" id="newBurger" name="burgerName">
+                </div>
+                <button type="submit" class="submitBtn btn btn-dark">Add Burger</button>
+            </form>
+        </div>
+    </div>
